@@ -1,2 +1,2 @@
 # scripts
-Scripts for analysis
+Branch for script revisions
