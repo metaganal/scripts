@@ -1,11 +1,6 @@
-# -*- coding: utf-8 -*-
 """
 Count the number of genes in a gff3 file and sums the length of the genes.
 """
-# credit to parseGFFAttributes and parseGFF3
-# __author__  = "Uli Köhler"
-# __license__ = "Apache License v2.0"
-# __version__ = "1.1"
 
 import argparse
 
@@ -27,7 +22,7 @@ with open(filename) as infile:
         parts = line.strip().split("\t")
         if parts[2] == 'gene':
             genecount += 1
-            genelength += int(parts[4]) - int(parts[3])
+            genelength += int(parts[4]) - int(parts[3]) + 1
 
-print("Total number of genes = ", genecount)
-print("Total length of gene regions = ", genelength)
+print("Total number of genes = {0}".format(genecount))
+print("Total length of gene regions = {0}".format(genelength))
